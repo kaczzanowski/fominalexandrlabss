@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+int x1, xdot, y1, ydot, sqSide;
+printf("Task 1. Is dot in square?\n");
+printf("Enter square coos:\nLeft down coo (x y): ");
+scanf("%d %d", &x1, &y1);
+printf("Enter square side: ");
+scanf("%d", &sqSide);
+printf("Enter coos of dot: ");
+scanf("%d %d", &xdot, &ydot);
+if ((xdot >= x1) && (xdot <= x1 + sqSide) && (ydot >= y1) && (ydot <= y1 + sqSide)) {
+if ((xdot == x1) || (xdot == x1 + sqSide) || (ydot == y1) || (ydot == y1 + sqSide)) printf("You are on contur\n");
+else printf("You are in square\n");
+} else {
+printf("You are out at Square\n");
+}
+}
