@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+int a, b, c;
+int d;
+printf("Enter three numbers: ");
+scanf("%d %d %d", &a, &b, &c);
+printf("Enter number d: ");
+scanf("%d", &d);
+if ((a == d) || (b == d) || (c == d)) {
+if (a == d) printf("a ravno d\n");
+if (b == d) printf("b ravno d\n");
+else printf("c ravno d\n");
+} else {
+int r1, r2, r3;
+r1 = d - a;
+r2 = d - b;
+r3 = d - c;
+if ((r1 > r2) && (r1 > r3)) printf("The biggest is d-a: %d\n", r1);
+else {
+if ((r2 > r1) && (r2 > r3)) {
+printf("The biggest is d-b: %d\n", r2);
+} else {
+printf("The biggest is d-c: %d\n", r3);
+}
+}
+}
+}
