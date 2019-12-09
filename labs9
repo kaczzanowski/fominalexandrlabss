@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+int smnum;
+int d1, d2, d3, d4, d5, d6;
+
+printf("Enter 6nums number: ");
+scanf("%d", &smnum);
+if (((smnum / 100000) < 1) || ((smnum / 100000) > 10)) return 0;
+d1 = smnum % 10;
+d2 = (smnum / 10) % 10;
+d3 = (smnum / 100) % 10;
+d4 = (smnum / 1000) % 10;
+d5 = (smnum / 10000) % 10;
+d6 = (smnum / 100000) % 10;
+printf("%d%d%d %d%d%d\n", d6, d5, d4, d3, d2, d1);
+if ((d1 + d2 + d3) == (d4 + d5 + d6)) printf("LUCKY\n");
+else printf("UNLUCKY\n");
+}
