@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int a, b;
+	printf("vvod vtorogo chisla: ");
+	scanf("%d %d", &a, &b); 
+	printf("Sum: %d\n", a + b);
+	printf("Diff: %d\n", a - b);
+	printf("Mult: %d\n", a * b);
+	printf("Del: %.2f\n", (float) a / (float) b);
+
+	int grad;
+	float rad;
+	printf("Enter angle: ");
+	scanf("%d", &grad);
+	rad = (grad * M_PI / 180);
+	printf("sin: %.3f cos: %.3f\n", sin(rad), cos(rad));
+}
