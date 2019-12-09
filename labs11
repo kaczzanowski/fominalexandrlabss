@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+int monthnum;
+printf("Enter number of month: ");
+scanf("%d", &monthnum);
+switch (monthnum) {
+case 1:
+case 2:
+case 12:
+printf("It's a winter\n");
+break;
+case 3:
+case 4:
+case 5:
+printf("It's a spring\n");
+break;
+case 6:
+case 7:
+case 8:
+printf("It's a summer\n");
+break;
+case 9:
+case 10:
+case 11:
+printf("It's a autumn\n");
+break;
+default:
+printf("Sorry. ERROR\n");
+break;
+}
+}
