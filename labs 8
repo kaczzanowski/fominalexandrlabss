@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+float a, b, c;
+float x1, x2;
+float t;
+float d;
+int v1, v2;
+int a1, a2;
+
+printf("Task 1.\n");
+printf("Rastoyanie mejdu mashinami: ");
+scanf("%f", &c);
+printf("Enter first car speed: ");
+scanf("%d", &v1);
+printf("Enter second car speed: ");
+scanf("%d", &v2);
+printf("Enter uskorenie first: ");
+scanf("%d", &a1);
+printf("Enter uskorenie second: ");
+scanf("%d", &a2);
+a = (a1 + a2) / 2;
+b = v1 + v2;
+c = -c;
+d = b * b - 4 * a * c;
+if (d > 0) {
+x1 = (-b + sqrt(d)) / (2 * a);
+x2 = (-b - sqrt(d)) / (2 * a);
+if (x1 > x2) {
+printf("Vremya vstrechi: %.2f\n", x1);
+t = x1;
+} else {
+printf("Vremya vstrechi: %.2f\n", x2);
+t = x2;
+}
+} else if (d == 0) {
+t = -b / (2 * a);
+printf("Vremya vstrechi: %.2f\n", x1);
+} else {
+printf("No corni\n");
+}
+}
