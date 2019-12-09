@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	// inizzzzzilization
+	int cubeSide, trapLower, trapUpper, trapAltitude;
+	float circleBigRadius, circleSmallRadius;
+	
+	
+	printf("Task 1. Enter cube side: ");
+	scanf("%d", &cubeSide);
+	printf("The volume of cube: %d\n", cubeSide * cubeSide * cubeSide);
+	printf("The lateral surface area: %d\n\n", cubeSide * cubeSide * 6);
+
+	printf("Task 2. Finding of ring area.\nEnter bigger radius of ring: ");
+	scanf("%f", &circleBigRadius);
+	printf("Enter smaller radius of ring: ");
+	scanf("%f", &circleSmallRadius);
+	printf("Ring Area: %.3f\n\n", M_PI * circleBigRadius * circleBigRadius - M_PI * circleSmallRadius * circleSmallRadius);
+
+
+	printf("Task 3: Finding of trapezoid area.\nEnter upper and lower sides of trapezoid: ");
+	scanf("%d %d", &trapUpper, &trapLower);
+	printf("Enter altitude of trapezoid: ");
+	scanf("%d", &trapAltitude);
+	printf("Trapezoid area: %.3f\n", 0.5 * (float) ((trapUpper + trapLower) * trapAltitude));
+}
