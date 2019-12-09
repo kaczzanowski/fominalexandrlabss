@@ -2,55 +2,27 @@
 #include <math.h>
 
 float lineL(int a1, int a2, int b1, int b2) {
-	return sqrt((b2 - b1) * (b2 - b1) + (a2 - a1) * (a2 - a1));
-}
-float triangleS(float a, float b, float c, float p) {
-	return sqrt(p * (p - a) * (p - b) * (p - c));
-}
-float triangleH(float a, float b, float c, float p) {
-	return (2 * triangleS(a, b, c, p)) / a;
-}
-float triangleM(float a, float b, float c) {
-	return sqrt(2 * b * b + 2 * c * c - a * a) / 2;
-}
-float triangleB(float a, float b, float c, float p) {
-	return (2 * sqrt(b * c * p * (p - a))) / (b + c);
-}
-float radiusL(float a, float b, float c, float p) {
-	return sqrt(((p - a) * (p - b) * (p - c)) / p);
-}
-float radiusO(float a, float b, float c, float p) {
-	return (a * b * c) / (4 * triangleS(a, b, c, p));
-}
-float cose(float a, float b, float c) {
-	return (b * b + c * c - a * a) / (2 * b * c);
+return sqrt((b2 - b1) * (b2 - b1) + (a2 - a1) * (a2 - a1));
 }
 
 int main() {
-	printf("TASK 3:\n");
-	int x1, x2, x3, y1, y2, y3;
-	printf("First coo:");
-	scanf("%d %d", &x1, &y1);
-	printf("Second coo:");
-	scanf("%d %d", &x2, &y2);
-	printf("Third coo:");
-	scanf("%d %d", &x3, &y3);
+printf("TASK 3:\n");
+int x1, x2, x3, y1, y2, y3;
+printf("First coo:");
+scanf("%d %d", &x1, &y1);
+printf("Second coo:");
+scanf("%d %d", &x2, &y2);
+printf("Third coo:");
+scanf("%d %d", &x3, &y3);
 
-	float a, b, c;
-	a = lineL(x1,x2,y1,y2);
-	b = lineL(x1,x3,y1,y3);
-	c = lineL(x2,x3,y2,y3);
+float a, b, c;
+a = lineL(x1,x2,y1,y2);
+b = lineL(x1,x3,y1,y3);
+c = lineL(x2,x3,y2,y3);
 
-	printf("\nDlini: %.2f %.2f %.2f\n", a, b, c);
-	float p = lineL(x1,x2,y1,y2) + lineL(x1,x3,y1,y3) + lineL(x2,x3,y2,y3);
-	printf("Perimeter: %.2f\n", p);
-	printf("Ploshad: %.2f\n", triangleS(a, b, c, p/2));
-	printf("\nTASK 4:\n");
-	printf("Visoti: %.2f %.2f %.2f\n", triangleH(a, b, c, p/2), triangleH(b, a, c, p/2), triangleH(c, a, b, p/2));
-	printf("Medians: %.2f, %.2f, %.2f\n", triangleM(a, b, c), triangleM(b, a, c), triangleM(c, a, b));
-	printf("Bis: %.2f %.2f %.2f\n", triangleB(a, b, c, p/2), triangleB(b, a, c, p/2), triangleB(c, a, b, p/2));
-	printf("\nTASK 5:\n");
-	printf("Radiusi vpis: %.2f %.2f %.2f\n", radiusL(a, b, c, p/2), radiusL(b,a,c,p/2), radiusL(c,a,b,p/2));
-	printf("Radiusi opis: %.2f %.2f %.2f\n", radiusO(a, b, c, p/2), radiusO(b,a,c,p/2), radiusO(c,a,b,p/2));
-	printf("Ugli: %.2f %.2f %.2f\n", acos(cose(a,b,c)) * 180 / M_PI, acos(cose(b,a,c)) * 180 / M_PI, acos(cose(c,a,b)) * 180 / M_PI);
+printf("\nDlini: %.2f %.2f %.2f\n", a, b, c);
+float p = a + b + c;
+printf("Perimeter: %.2f\n", p);
+float s = sqrt(p * (p - a) * (p - b) * (p - c));
+printf("Ploshad: %.2f\n", s);
 }
